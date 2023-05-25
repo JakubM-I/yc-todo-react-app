@@ -1,4 +1,4 @@
-
+import React, { useState} from "react";
 import './App.css';
 import TaskList from './TaskList';
 import Header from './Header';
@@ -7,19 +7,35 @@ import Tasks from './Tasks';
 import TaskMenu from './TasksMenu';
 import Section from './Section';
 
-let tasksList = [
-  {id: 1, taskName: "Zadanie 1", taskPriority: 1, taskDone: false, taskVisibility: true,},
-  {id: 2, taskName: "Zadanie 2", taskPriority: 2, taskDone: true, taskVisibility: true,},
-  {id: 3, taskName: "Zadanie 3", taskPriority: 0, taskDone: false, taskVisibility: true,},
-];
 
 function App() {
+  const [tasksList, setTasksList] = useState([
+    {id: 1, taskName: "Zadanie 1", taskDone: false, taskVisibility: true,},
+    {id: 2, taskName: "Zadanie 2", taskDone: true, taskVisibility: true,},
+    {id: 3, taskName: "Zadanie 3", taskDone: false, taskVisibility: true,},
+  ])
+
+  const addNewTask = (taskName) => {
+    setTasksList(tasksList => [
+      ...tasksList,
+      {
+        id: tasksList.length ? tasksList[tasksList.length - 1].id + 1 : 1,
+        taskName,
+        taskDone: false,
+        taskVisibility: true,
+      },
+    ]);
+  };
+
   return (
     <TaskList>
       <Header title="Lista zadań" />
       <Section 
         title="Dodaj nowe zadanie" 
-        body={<Form />} 
+        body={
+          <Form 
+            addNewTask={addNewTask}
+          />} 
       />
       <Section 
         title="Lista zadań" 
