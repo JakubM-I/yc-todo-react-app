@@ -1,9 +1,11 @@
 import "./style.css";
 
 const Section = ({title, menu, body}) => (
-    <section class="taskListSection">
-        <h3 class="taskListSection__header">{title}</h3>
+    <section className="taskListSection">
+        <div className="taskListSection__header">
+        <h3 className="taskListSection__title">{title}</h3>
         {menu}
+        </div>
         {body}
     </section>
 )

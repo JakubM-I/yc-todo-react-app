@@ -1,17 +1,5 @@
 import "./style.css";
 
-const toggleTaskPriority = (task) => {
-    if (task.taskPriority === 0) {
-        return "tasks__taskPriority--nopriority";
-    };
-
-    if (task.taskPriority === 1) {
-        return "tasks__taskPriority--averange";
-    };
-
-    return "tasks__taskPriority--important";
-};
-
 const Tasks = ({tasks}) => (
     <ul className="tasks__list">
         {tasks.map(task => (
@@ -24,9 +12,6 @@ const Tasks = ({tasks}) => (
                 />
                 <span className="tasks__taskContent">{task.taskName}</span>
                 <div className="tasks__itemButtons">
-                    <span className={`tasks__taskPriority 
-                    ${toggleTaskPriority(task)}`}
-                    />
                     <button className="tasks__removeButton" />
                 </div>
             </li>

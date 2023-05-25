@@ -28,15 +28,6 @@
     }
 }
 
-.taskListForm__priority{
-    font-size: var(--form-font-size);
-    -webkit-appearance: none;
-    -webkit-padding-start: 5px;
-    -webkit-padding-end: 5px;
-    -moz-appearance: auto;
-    cursor: pointer;
-}
-
 .taskListForm__addButton{
     padding: 8px 10px;
     border: 1px solid  rgb(180, 178, 178);
@@ -46,6 +37,12 @@
     font-size: var(--form-font-size);
     cursor: pointer;
     transition: color .65s, background .65s, transform .45s;
+}
+
+@media screen and (max-width: 499px){
+    .taskListForm__addButton{
+        flex-grow: 1;
+    }
 }
 
 .taskListForm__addButton:hover{
