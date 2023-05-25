@@ -43,6 +43,10 @@ function App() {
     }));
   };
 
+  const deleteTask = (id) => {
+    setTasksList(tasksList => tasksList.filter(task => task.id !== id ));
+  };
+
   return (
     <TaskList>
       <Header title="Lista zadań" />
@@ -65,6 +69,7 @@ function App() {
           <Tasks 
             tasks={tasksList} 
             toggleTaskDone={toggleTaskDone}
+            deleteTask={deleteTask}
           />} 
       />
     </TaskList>
