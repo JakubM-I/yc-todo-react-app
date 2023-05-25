@@ -1,9 +1,12 @@
 import "./style.css";
 
-const TaskMenu = ({ tasks, doneAllTasks }) => (
+const TaskMenu = ({ tasks, doneAllTasks, hideDoneTasks }) => (
     tasks.length > 0 && (
         <div className="tasks__buttons">
-        <button className="tasks__buttonItem">
+        <button 
+            className="tasks__buttonItem"
+            onClick={hideDoneTasks}
+        >
             {tasks.some(({ taskVisibility }) => taskVisibility === false) 
             ? "Pokaż " 
             : "Ukryj "}

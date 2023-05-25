@@ -37,6 +37,12 @@ function App() {
     setTasksList(tasksList => tasksList.map(task => ({...task, taskDone: true})));
   };
 
+  const hideDoneTasks = () => {
+    setTasksList(tasksList => tasksList.map(task => {
+      return (task.taskDone ? {...task, taskVisibility: !task.taskVisibility} : task)
+    }));
+  };
+
   return (
     <TaskList>
       <Header title="Lista zadań" />
@@ -53,6 +59,7 @@ function App() {
           <TaskMenu 
             tasks={tasksList} 
             doneAllTasks={doneAllTasks}
+            hideDoneTasks={hideDoneTasks}
           />} 
         body={
           <Tasks 
