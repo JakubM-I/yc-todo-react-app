@@ -9,7 +9,11 @@ import Section from './Section';
 
 
 function App() {
-  const [tasksList, setTasksList] = useState(JSON.parse(localStorage.getItem("tasks")))
+  const [tasksList, setTasksList] = useState(JSON.parse(localStorage.getItem("tasks")));
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasksList))
+  }, [tasksList]);
 
   const addNewTask = (taskName) => {
     setTasksList(tasksList => [
@@ -22,10 +26,6 @@ function App() {
       },
     ]);
   };
-
-  useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasksList))
-  }, [tasksList]);
 
   const toggleTaskDone = (id) => {
     setTasksList(tasksList => tasksList.map(task => 
