@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useEffect, useState} from "react";
 import './App.css';
 import TaskList from './TaskList';
 import Header from './Header';
@@ -9,11 +9,7 @@ import Section from './Section';
 
 
 function App() {
-  const [tasksList, setTasksList] = useState([
-    {id: 1, taskName: "Zadanie 1", taskDone: false, taskVisibility: true,},
-    {id: 2, taskName: "Zadanie 2", taskDone: true, taskVisibility: true,},
-    {id: 3, taskName: "Zadanie 3", taskDone: false, taskVisibility: true,},
-  ])
+  const [tasksList, setTasksList] = useState(JSON.parse(localStorage.getItem("tasks")))
 
   const addNewTask = (taskName) => {
     setTasksList(tasksList => [
@@ -26,6 +22,10 @@ function App() {
       },
     ]);
   };
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasksList))
+  }, [tasksList]);
 
   const toggleTaskDone = (id) => {
     setTasksList(tasksList => tasksList.map(task => 
