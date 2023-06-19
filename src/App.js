@@ -7,10 +7,9 @@ import Tasks from './Tasks';
 import TaskMenu from './TasksMenu';
 import Section from './Section';
 
-const localSavedTasks = (
-  JSON.parse(localStorage.getItem("tasks")) ?
-  JSON.parse(localStorage.getItem("tasks")) : []
-);
+const localSavedTasks = JSON.parse(localStorage.getItem("tasks")) 
+  ? JSON.parse(localStorage.getItem("tasks")) 
+  : [];
 
 function App() {
   const [tasksList, setTasksList] = useState(localSavedTasks);
