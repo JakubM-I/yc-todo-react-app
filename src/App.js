@@ -7,15 +7,13 @@ import Tasks from './Tasks';
 import TaskMenu from './TasksMenu';
 import Section from './Section';
 
-// const localTasks = (
-//   JSON.parse(localStorage.getItem("tasks")) ?
-//   JSON.parse(localStorage.getItem("tasks")) : []
-// );
+const localSavedTasks = (
+  JSON.parse(localStorage.getItem("tasks")) ?
+  JSON.parse(localStorage.getItem("tasks")) : []
+);
 
 function App() {
-  const [tasksList, setTasksList] = useState(
-    JSON.parse(localStorage.getItem("tasks")) === null ?
-  [] : JSON.parse(localStorage.getItem("tasks")));
+  const [tasksList, setTasksList] = useState(localSavedTasks);
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasksList))
