@@ -1,9 +1,9 @@
-import "./style.css";
+import { StyledTaskList } from "./styled";
 
 const TaskList = ({children}) => (
-    <main className="taskList">
+    <StyledTaskList>
         {children}
-    </main>
+    </StyledTaskList>
 );
 
 export default TaskList;
