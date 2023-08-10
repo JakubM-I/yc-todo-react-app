@@ -5,7 +5,7 @@ import Form from './Form';
 import Tasks from './Tasks';
 import TaskMenu from './TasksMenu';
 import Section from './Section';
-import { useTasks } from "./useTasks";
+import { useTasks } from "./utils/useTasks";
 import StyledGlobal from './Styled/styledGlobal';
 
 function App() {
