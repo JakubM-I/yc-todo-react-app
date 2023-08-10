@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./style.css";
 
 const Form = ({addNewTask}) => {
     const [taskName, setTaskName] = useState("");
+    const inputRef = useRef(null);
 
     const formSubmit = (event) => {
         event.preventDefault();
@@ -10,7 +11,9 @@ const Form = ({addNewTask}) => {
             return;
         }
         addNewTask(taskName.trim());
+        inputRef.current.focus();
         setTaskName("");
+        
     };
 
     return(
@@ -20,6 +23,7 @@ const Form = ({addNewTask}) => {
         action="#"
     >
         <input 
+            ref={inputRef}
             value={taskName}
             onChange={({target}) => setTaskName(target.value)}
             className="taskListForm__addField" 
