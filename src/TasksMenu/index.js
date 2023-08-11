@@ -1,25 +1,23 @@
-import "./style.css";
+import { StyledTaskMenu, StyledMenuItem } from "./styled";
 
 const TaskMenu = ({ tasks, doneAllTasks, hideDoneTasks }) => (
     tasks.length > 0 && (
-        <div className="tasks__buttons">
-        <button 
-            className="tasks__buttonItem"
+        <StyledTaskMenu>
+        <StyledMenuItem 
             onClick={hideDoneTasks}
         >
             {tasks.some(({ taskVisibility }) => taskVisibility === false) 
             ? "Pokaż " 
             : "Ukryj "}
             zakończone
-        </button>
-        <button 
-            className="tasks__buttonItem"
+        </StyledMenuItem>
+        <StyledMenuItem 
             onClick={doneAllTasks}
             disabled={tasks.every(({ taskDone }) => taskDone)}
         >
             Zakończ wszystkie
-        </button>
-    </div>
+        </StyledMenuItem>
+    </StyledTaskMenu>
     )
 );
 
