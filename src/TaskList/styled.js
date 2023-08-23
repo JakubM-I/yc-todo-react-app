@@ -4,5 +4,6 @@ export const StyledTasks = styled.main`
     background: rgb(230, 230, 228);
     width: min(1000px, calc(100% - 20px));
     margin-inline: auto;
+    margin-block-start: 15px;
     padding: 15px;
 `;

@@ -1,4 +1,3 @@
-import './App.css';
 import TaskList from './TaskList';
 import Header from './Header';
 import Form from './Form';
