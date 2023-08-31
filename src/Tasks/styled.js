@@ -3,11 +3,11 @@ import doneicon from "./done-icon.png"
 import trashicon from "./trash-icon.png";
 
 export const StyledTaskList = styled.ul`
-    border-top: 1px solid #b3b2b2;
+    border-top: 1px solid ${({theme}) => theme.colors.borderColor};
     padding: 20px 15px 0px;
     margin-top: 0;
 
-    @media(max-width: 499px){
+    @media(max-width: ${({theme}) => theme.breakepoints.mobile}px){
         padding: 20px 5px 0px;
     }
 `;
@@ -18,7 +18,7 @@ export const StyledTaskItem = styled.li`
     justify-content: space-between;
     align-items: center;
     gap: 10px;
-    background: #fff;
+    background: ${({theme}) => theme.colors.primaryLightColor};
     padding: 5px;
     border-bottom: 1px solid #928e8e;
 
@@ -44,31 +44,30 @@ export const StyledTaskButton = styled.button`
     cursor: pointer;
     transition: opacity 0.3s ease-in;
 
-    ${({doneButton}) => doneButton && css`
-        background: #27f507;
+    &:hover{
+        opacity: 0.7;
+    }
+`;
 
-        ${({done}) => done && css`
-            background: #dffad8;
+export const StyledDoneButton = styled(StyledTaskButton)`
+    background: ${({theme}) => theme.colors.doneButton};
+
+    ${({done}) => done && css`
+            background: ${({theme}) => theme.colors.doneButtonDone};
             background-image: url("${doneicon}");
             background-position: center;
             background-size: initial;
             background-repeat: no-repeat;
             border: none;
         ` }
+`;
 
-    ` }
-
-    ${({removeButton}) => removeButton && css`
-        background: #f74d1dea;
-        background-image: url("${trashicon}");
-        background-position: center;
-        background-size: initial;
-        background-repeat: no-repeat;
-    `}
-
-    &:hover{
-        opacity: 0.7;
-    }
+export const StyledRemoveButton = styled(StyledTaskButton)`
+    background: ${({theme}) => theme.colors.removeButton};
+    background-image: url("${trashicon}");
+    background-position: center;
+    background-size: initial;
+    background-repeat: no-repeat;
 `;
 
 export const StyledContent = styled.span`

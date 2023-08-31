@@ -17,7 +17,7 @@ const StyledGlobal = createGlobalStyle`
     }
   
     body{
-        background: rgb(142, 142, 141);
+        background: ${({theme}) => theme.colors.primaryBackgroundColor};
     }
 `;
 

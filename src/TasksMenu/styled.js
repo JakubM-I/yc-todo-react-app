@@ -4,7 +4,7 @@ export const StyledTaskMenu = styled.div`
     display: flex;
     gap: 10px;
 
-    @media(max-width: 499px){
+    @media(max-width: ${({theme}) => theme.breakepoints.mobile}px){
         flex-direction: column; 
     }
 `;
@@ -12,15 +12,15 @@ export const StyledTaskMenu = styled.div`
 export const StyledMenuItem = styled.button`
     background: none;
     border: none;
-    color: #0040ff;
+    color: ${({theme}) => theme.colors.menuButton};
     transition: color .4s ease-out;
     cursor: pointer;
 
     &:hover{
-        color: #8fabff;
+        color: ${({theme}) => theme.colors.menuButtonHover};
     }
 
     &:disabled{
-        color:#c6c5c5e9
+        color: ${({theme}) => theme.colors.menuButtonDisable};
     }
 `;
