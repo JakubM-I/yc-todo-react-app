@@ -18,7 +18,7 @@ export const StyledForm = styled.form`
 export const StyledInput = styled.input`
     flex-grow: 1;
     padding: 5px;
-    font-size: var(--form-font-size);
+    font-size: ${({theme}) => theme.font.formFontSize};
 
     @media(max-width: ${({theme}) => theme.breakepoints.mobile}px){
         flex-basis: 100%;
@@ -33,7 +33,7 @@ export const StyledButton = styled.button`
     border-radius: 8px;
     background: ${({theme}) => theme.colors.primaryButton};
     color: ${({theme}) => theme.colors.primaryLightColor};
-    font-size: var(--form-font-size);
+    font-size: ${({theme}) => theme.font.formFontSize};
     cursor: pointer;
     transition: color .65s, background .65s, transform .45s;
 

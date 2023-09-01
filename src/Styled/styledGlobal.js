@@ -10,12 +10,6 @@ const StyledGlobal = createGlobalStyle`
         box-sizing: inherit;
     }
   
-    :root{
-        --icon-width: min(max(6.412vw, 30px), 35px);
-        --icon-height: min(max(6.412vw, 30px), 35px);
-        --form-font-size: min(max(2.89vw, 14px),17px);
-    }
-  
     body{
         background: ${({theme}) => theme.colors.primaryBackgroundColor};
     }

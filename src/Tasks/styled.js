@@ -37,8 +37,8 @@ export const StyledTaskItem = styled.li`
 `;
 
 export const StyledTaskButton = styled.button`
-    width: var(--icon-width);
-    height: var(--icon-height);
+    width: ${({theme}) => theme.dimensions.iconWidth};
+    height: ${({theme}) => theme.dimensions.iconHeight};
     border: 1px solid ${({theme}) => theme.colors.thirdBorderColor};
     flex-shrink: 0;
     cursor: pointer;

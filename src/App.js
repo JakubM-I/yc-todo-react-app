@@ -33,6 +33,15 @@ function App() {
     breakepoints: {
       mobile: 499,
     },
+
+    dimensions: {
+      iconWidth: "min(max(6.412vw, 30px), 35px)",
+      iconHeight: "min(max(6.412vw, 30px), 35px)",
+    },
+
+    font: {
+      formFontSize: "min(max(2.89vw, 14px),17px)",
+    },
   }
 
   return (
