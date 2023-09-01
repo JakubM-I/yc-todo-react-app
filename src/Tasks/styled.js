@@ -3,7 +3,7 @@ import doneicon from "./done-icon.png"
 import trashicon from "./trash-icon.png";
 
 export const StyledTaskList = styled.ul`
-    border-top: 1px solid ${({theme}) => theme.colors.borderColor};
+    border-top: 1px solid ${({theme}) => theme.colors.firstBorderColor};
     padding: 20px 15px 0px;
     margin-top: 0;
 
@@ -20,11 +20,11 @@ export const StyledTaskItem = styled.li`
     gap: 10px;
     background: ${({theme}) => theme.colors.primaryLightColor};
     padding: 5px;
-    border-bottom: 1px solid #928e8e;
+    border-bottom: 1px solid ${({theme}) => theme.colors.secondBorderColor};
 
     ${({done}) => done && css`
         text-decoration: line-through;
-        color: #d3d3d3;
+        color: ${({theme}) => theme.colors.doneText};
     `}
 
     ${({hide}) => !hide && css`
@@ -39,7 +39,7 @@ export const StyledTaskItem = styled.li`
 export const StyledTaskButton = styled.button`
     width: var(--icon-width);
     height: var(--icon-height);
-    border: 1px #e5e2e2;
+    border: 1px solid ${({theme}) => theme.colors.thirdBorderColor};
     flex-shrink: 0;
     cursor: pointer;
     transition: opacity 0.3s ease-in;

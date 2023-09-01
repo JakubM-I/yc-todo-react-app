@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyledForm = styled.form`
     background: ${({theme}) => theme.colors.primaryLightColor};
     padding: 15px;
-    border-top: 1px solid ${({theme}) => theme.colors.borderColor};
+    border-top: 1px solid ${({theme}) => theme.colors.firstBorderColor};
     display: flex;
     justify-content: flex-start;
     gap: 10px;
@@ -29,7 +29,7 @@ export const StyledInput = styled.input`
 
 export const StyledButton = styled.button`
     padding: 8px 10px;
-    border: 1px solid ${({theme}) => theme.colors.borderColor};
+    border: 1px solid ${({theme}) => theme.colors.firstBorderColor};
     border-radius: 8px;
     background: ${({theme}) => theme.colors.primaryButton};
     color: ${({theme}) => theme.colors.primaryLightColor};

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledSection = styled.section`
     background: ${({theme}) => theme.colors.primaryLightColor};
-    border: 1px solid ${({theme}) => theme.colors.borderColor};
+    border: 1px solid ${({theme}) => theme.colors.firstBorderColor};
     margin-bottom: 15px;
 `;
 
