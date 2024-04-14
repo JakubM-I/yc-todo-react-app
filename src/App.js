@@ -1,11 +1,11 @@
-import TaskList from './TaskList';
-import Header from './Header';
-import Form from './Form';
-import Tasks from './Tasks';
-import TaskMenu from './TasksMenu';
-import Section from './Section';
-import { useTasks } from "./utils/useTasks";
-import StyledGlobal from './Styled/styledGlobal';
+import TaskList from './features/tasks/TaskList';
+import Header from './common/Header';
+import Form from './features/tasks/Form';
+import Tasks from './App';
+import TaskMenu from './features/tasks/TasksMenu';
+import Section from './common/Section';
+import { useTasks } from "./features/tasks/utils/useTasks";
+import StyledGlobal from './styledGlobal';
 import { ThemeProvider } from 'styled-components';
 
 function App() {
