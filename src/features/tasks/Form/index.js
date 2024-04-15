@@ -1,7 +1,11 @@
 import { useState, useRef } from "react";
+import { useDispatch } from "react-redux";
+import { addNewTask } from "../tasksSlice";
 import { StyledForm, StyledInput, StyledButton } from "./styled";
 
-const Form = ({addNewTask}) => {
+const Form = () => {
+    const dispatch = useDispatch();
+
     const [taskName, setTaskName] = useState("");
     const inputRef = useRef(null);
 
@@ -10,7 +14,8 @@ const Form = ({addNewTask}) => {
         if(!taskName.trim()){
             return;
         }
-        addNewTask(taskName.trim());
+        dispatch(addNewTask(taskName.trim()))
+        // addNewTask(taskName.trim());
         inputRef.current.focus();
         setTaskName("");
         

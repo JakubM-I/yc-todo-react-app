@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import { ThemeProvider } from 'styled-components';
+import { Provider } from 'react-redux';
+import { store } from './store';
 import { theme } from './features/tasks/utils/theme';
 import reportWebVitals from './reportWebVitals';
 import StyledGlobal from './styledGlobal';
@@ -9,10 +11,12 @@ import StyledGlobal from './styledGlobal';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <StyledGlobal />
-    <App />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <StyledGlobal />
+        <App />
+      </ThemeProvider>
+    </Provider>
   </React.StrictMode>
 );
 
