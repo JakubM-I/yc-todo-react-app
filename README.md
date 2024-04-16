@@ -1,25 +1,38 @@
 ## Tasks List React App
+
 ---
+
 Welcome to my tasks list app making during Frontend Developer course on YouCode.pl.
 This is React version of my app, bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 ## Demo
+
 ---
+
 [https://jakubm-i.github.io/yc-todo-react-app/](https://jakubm-i.github.io/yc-todo-react-app/)
+
 ## About my page
+
 ---
-Tasks list allows adding tasks to list. Tasks can be marked as done and removed from the list. 
+
+Tasks list allows adding tasks to list. Tasks can be marked as done and removed from the list.
 
 ## Techniques
+
 ---
+
 - CSS
 - Flex
 - CSS function min, max
 - CSS variables
 - CSS transitions
+- Styled components
 - ES6+ feature
 - React.js
 - Create React App
+- Redux
 - BEM
+
 ## Available Scripts
 
 In the project directory, you can run:
