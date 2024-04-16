@@ -1,15 +1,16 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { StyledTaskMenu, StyledMenuItem } from "./styled";
-import { selectTask } from "../tasksSlice";
+import { selectTask, hideDoneTasks, doneAllTasks } from "../tasksSlice";
 
-const TaskMenu = ({ doneAllTasks, hideDoneTasks }) => {
+const TaskMenu = () => {
     const {tasks} = useSelector(selectTask);
+    const dispatch = useDispatch();
 
     return(
         tasks.length > 0 && (
             <StyledTaskMenu>
             <StyledMenuItem 
-                onClick={hideDoneTasks}
+                onClick={() => dispatch(hideDoneTasks())}
             >
                 {tasks.some(({ taskVisibility }) => taskVisibility === false) 
                 ? "Pokaż " 
@@ -17,7 +18,7 @@ const TaskMenu = ({ doneAllTasks, hideDoneTasks }) => {
                 zakończone
             </StyledMenuItem>
             <StyledMenuItem 
-                onClick={doneAllTasks}
+                onClick={() => dispatch(doneAllTasks())}
                 disabled={tasks.every(({ taskDone }) => taskDone)}
             >
                 Zakończ wszystkie
