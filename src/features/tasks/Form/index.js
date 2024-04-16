@@ -15,7 +15,6 @@ const Form = () => {
             return;
         }
         dispatch(addNewTask(taskName.trim()))
-        // addNewTask(taskName.trim());
         inputRef.current.focus();
         setTaskName("");
         

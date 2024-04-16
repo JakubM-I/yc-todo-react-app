@@ -4,9 +4,6 @@ import Form from './Form';
 import Tasks from './Tasks';
 import TaskMenu from './TasksMenu';
 import Section from '../../common/Section';
-// import { useTasks } from "./utils/useTasks";
-// import StyledGlobal from '../../styledGlobal';
-// import { ThemeProvider } from 'styled-components';
 
 function TasksApp() {
 

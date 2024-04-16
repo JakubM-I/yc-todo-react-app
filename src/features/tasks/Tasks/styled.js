@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components';
-import doneicon from "./done-icon.png"
-import trashicon from "./trash-icon.png";
+import doneicon from "../../../common/assets/done-icon.png"
+import trashicon from "../../../common/assets/trash-icon.png";
 
 export const StyledTaskList = styled.ul`
     border-top: 1px solid ${({theme}) => theme.colors.firstBorderColor};
