@@ -7,12 +7,7 @@ export const tasksSlice = createSlice({
     },
     reducers: {
         addNewTask: ({tasks}, {payload}) => {
-            tasks.push({
-                id: nanoid(),
-                taskName: payload,
-                taskDone: false,
-                taskVisibility: true,
-            })
+            tasks.push(payload);
         },
         toggleTaskDone: ({tasks}, {payload}) => {
             const index = tasks.findIndex(task => task.id === payload);

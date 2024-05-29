@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
+import { nanoid } from "@reduxjs/toolkit";
 import { addNewTask } from "../tasksSlice";
 import { StyledForm, StyledInput, StyledButton } from "./styled";
 
@@ -14,10 +15,15 @@ const Form = () => {
         if(!taskName.trim()){
             return;
         }
-        dispatch(addNewTask(taskName.trim()))
+        dispatch(addNewTask({
+            id: nanoid(),
+            taskName: taskName.trim(),
+            taskDone: false,
+            taskVisibility: true,
+            })
+        );
         inputRef.current.focus();
         setTaskName("");
-        
     };
 
     return(
