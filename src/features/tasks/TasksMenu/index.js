@@ -14,10 +14,6 @@ const TaskMenu = () => {
             <StyledMenuItem 
                 onClick={() => dispatch(hideDoneTasks())}
             >
-                {/* {tasks.some(({ taskVisibility }) => taskVisibility === false) 
-                ? "Pokaż " 
-                : "Ukryj "} */}
-
                 {isHiddenTasks
                 ? "Pokaż " 
                 : "Ukryj "}
