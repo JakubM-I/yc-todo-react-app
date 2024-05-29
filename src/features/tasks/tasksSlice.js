@@ -6,11 +6,11 @@ export const tasksSlice = createSlice({
         tasks: [],
     },
     reducers: {
-        addNewTask: ({tasks}, {payload}) => {
-            tasks.push(payload);
+        addNewTask: ({tasks}, {payload: newTask}) => {
+            tasks.push(newTask);
         },
-        toggleTaskDone: ({tasks}, {payload}) => {
-            const index = tasks.findIndex(task => task.id === payload);
+        toggleTaskDone: ({tasks}, {payload: taskId}) => {
+            const index = tasks.findIndex(task => task.id === taskId);
             tasks[index].taskDone = !tasks[index].taskDone;
         },
 
@@ -28,8 +28,8 @@ export const tasksSlice = createSlice({
             })
         },
 
-        deleteTask: ({tasks}, {payload}) => {
-            const index = tasks.findIndex(task => task.id === payload);
+        deleteTask: ({tasks}, {payload: taskId}) => {
+            const index = tasks.findIndex(task => task.id === taskId);
             tasks.splice(index, 1);
         }
     }
