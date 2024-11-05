@@ -1,10 +1,15 @@
+import { NavLink } from "react-router-dom";
 import { StyledNavigation, StyledNavigationItem } from "./styled";
 
 const Navigation = () => (
     <>
         <StyledNavigation>
-            <StyledNavigationItem>Zadania</StyledNavigationItem>
-            <StyledNavigationItem>O autorze</StyledNavigationItem>
+            <StyledNavigationItem>
+                <NavLink to={"/"}>Zadania</NavLink>
+            </StyledNavigationItem>
+            <StyledNavigationItem>
+                <NavLink to={"o-autorze"}>O autorze</NavLink>
+            </StyledNavigationItem>
         </StyledNavigation>
     </>
 );

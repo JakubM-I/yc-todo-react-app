@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import App from './App';
+import TasksList from "./features/tasks/TasksApp";
+import AuthorPage from "./features/author";
 import { ThemeProvider } from 'styled-components';
 import { Provider } from 'react-redux';
 import { store } from './store';
@@ -8,13 +11,34 @@ import { theme } from './features/tasks/utils/theme';
 import reportWebVitals from './reportWebVitals';
 import StyledGlobal from './styledGlobal';
 
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <TasksList />
+      },
+      {
+        path: "o-autorze",
+        element: <AuthorPage />
+      }
+    ],
+  }
+], {
+  basename: "/yc-todo-react-app"
+})
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <StyledGlobal />
-        <App />
+        {/* <App /> */}
+        <RouterProvider router={router} />
       </ThemeProvider>
     </Provider>
   </React.StrictMode>

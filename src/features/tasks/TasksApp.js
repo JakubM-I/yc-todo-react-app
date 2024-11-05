@@ -5,7 +5,7 @@ import Tasks from './Tasks';
 import TaskMenu from './TasksMenu';
 import Section from '../../common/Section';
 
-function TasksApp() {
+function TasksList() {
 
   return (
     <>
@@ -28,4 +28,4 @@ function TasksApp() {
   );
 }
 
-export default TasksApp;
+export default TasksList;
