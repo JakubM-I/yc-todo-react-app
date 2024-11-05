@@ -1,9 +1,11 @@
+import { StyledNavigation, StyledNavigationItem } from "./styled";
+
 const Navigation = () => (
     <>
-        <ul>
-            <li>Zadania</li>
-            <li>O autorze</li>
-        </ul>
+        <StyledNavigation>
+            <StyledNavigationItem>Zadania</StyledNavigationItem>
+            <StyledNavigationItem>O autorze</StyledNavigationItem>
+        </StyledNavigation>
     </>
 );
 
