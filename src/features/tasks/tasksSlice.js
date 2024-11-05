@@ -6,29 +6,29 @@ export const tasksSlice = createSlice({
         tasks: [],
     },
     reducers: {
-        addNewTask: ({tasks}, {payload: newTask}) => {
+        addNewTask: ({ tasks }, { payload: newTask }) => {
             tasks.push(newTask);
         },
-        toggleTaskDone: ({tasks}, {payload: taskId}) => {
+        toggleTaskDone: ({ tasks }, { payload: taskId }) => {
             const index = tasks.findIndex(task => task.id === taskId);
             tasks[index].taskDone = !tasks[index].taskDone;
         },
 
-        doneAllTasks: ({tasks}) => {
-            for(const task of tasks){
+        doneAllTasks: ({ tasks }) => {
+            for (const task of tasks) {
                 task.taskDone = true;
             }
         },
 
-        hideDoneTasks: ({tasks}) => {
+        hideDoneTasks: ({ tasks }) => {
             tasks.forEach(task => {
-                if(task.taskDone === true){
+                if (task.taskDone === true) {
                     task.taskVisibility = !task.taskVisibility;
                 }
             })
         },
 
-        deleteTask: ({tasks}, {payload: taskId}) => {
+        deleteTask: ({ tasks }, { payload: taskId }) => {
             const index = tasks.findIndex(task => task.id === taskId);
             tasks.splice(index, 1);
         }
@@ -36,7 +36,9 @@ export const tasksSlice = createSlice({
 });
 
 export const selectTaskState = (state) => state.tasks;
+export const taskSelector = state => selectTaskState(state).tasks;
 export const selectAllTaskDone = (state) => selectTaskState(state).tasks.every(task => task.taskDone);
-export const selectHiddenTask = (state) => selectTaskState(state).tasks.some(task => task.taskVisibility === false); 
-export const {addNewTask, toggleTaskDone, doneAllTasks, hideDoneTasks, deleteTask} = tasksSlice.actions;
+export const selectHiddenTask = (state) => selectTaskState(state).tasks.some(task => task.taskVisibility === false);
+export const selectTaskById = (state, taskId) => taskSelector(state).find(task => task.id === taskId);
+export const { addNewTask, toggleTaskDone, doneAllTasks, hideDoneTasks, deleteTask } = tasksSlice.actions;
 export default tasksSlice.reducer;

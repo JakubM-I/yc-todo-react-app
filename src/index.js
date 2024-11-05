@@ -4,12 +4,14 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import App from './App';
 import TasksList from "./features/tasks/TasksApp";
 import AuthorPage from "./features/author";
+import TaskPage from './features/tasks/TaskPage';
 import { ThemeProvider } from 'styled-components';
 import { Provider } from 'react-redux';
 import { store } from './store';
 import { theme } from './features/tasks/utils/theme';
 import reportWebVitals from './reportWebVitals';
 import StyledGlobal from './styledGlobal';
+
 
 
 const router = createBrowserRouter([
@@ -24,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "o-autorze",
         element: <AuthorPage />
+      },
+      {
+        path: "task/:id",
+        element: <TaskPage />
       }
     ],
   }
