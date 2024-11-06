@@ -4,6 +4,7 @@ import Form from './Form';
 import Tasks from './Tasks';
 import TaskMenu from './TasksMenu';
 import Section from '../../common/Section';
+import SearchForm from './SearchForm';
 
 function TasksList() {
 
@@ -15,6 +16,10 @@ function TasksList() {
           title="Dodaj nowe zadanie"
           body={
             <Form />}
+        />
+        <Section
+          body={
+            <SearchForm />}
         />
         <Section
           title="Lista zadań"

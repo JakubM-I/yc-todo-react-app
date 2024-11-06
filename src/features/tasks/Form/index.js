@@ -2,7 +2,8 @@ import { useState, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 import { addNewTask } from "../tasksSlice";
-import { StyledForm, StyledInput, StyledButton } from "./styled";
+import { StyledButton } from "./styled";
+import { StyledForm, StyledInput } from "../../../common/Form/styled";
 
 const Form = () => {
     const dispatch = useDispatch();
@@ -12,7 +13,7 @@ const Form = () => {
 
     const formSubmit = (event) => {
         event.preventDefault();
-        if(!taskName.trim()){
+        if (!taskName.trim()) {
             return;
         }
         dispatch(addNewTask({
@@ -20,26 +21,26 @@ const Form = () => {
             taskName: taskName.trim(),
             taskDone: false,
             taskVisibility: true,
-            })
+        })
         );
         inputRef.current.focus();
         setTaskName("");
     };
 
-    return(
-    <StyledForm 
-        onClick={formSubmit}
-        action="#"
-    >
-        <StyledInput 
-            ref={inputRef}
-            value={taskName}
-            onChange={({target}) => setTaskName(target.value)} 
-            type="text" name="newTask" 
-            placeholder="Co jest do zrobienia?" 
-        />
-        <StyledButton>Dodaj zadanie</StyledButton>
-    </StyledForm>
+    return (
+        <StyledForm
+            onClick={formSubmit}
+            action="#"
+        >
+            <StyledInput
+                ref={inputRef}
+                value={taskName}
+                onChange={({ target }) => setTaskName(target.value)}
+                type="text" name="newTask"
+                placeholder="Co jest do zrobienia?"
+            />
+            <StyledButton>Dodaj zadanie</StyledButton>
+        </StyledForm>
     )
 };
 
