@@ -4,7 +4,7 @@ import Header from "../../../common/Header";
 import Section from "../../../common/Section";
 import { useSelector } from "react-redux";
 import { selectTaskById } from "../tasksSlice";
-import { StyledTaskPageBody } from "./styled";
+import { StyledBackNavLink, StyledTaskPageBody } from "./styled";
 
 const TaskPage = () => {
     const { id } = useParams();
@@ -13,7 +13,7 @@ const TaskPage = () => {
 
     return (
         <TasksAppMain>
-            <NavLink to={"/"}>&lt; Powrót do zadań</NavLink>
+            <StyledBackNavLink to={"/"}>&lt; Powrót do zadań</StyledBackNavLink>
             <Header title={"Szczegóły zadania"} />
             <Section
                 title={task ? task.taskName : "Nie znaleziono takiego zadania"}
