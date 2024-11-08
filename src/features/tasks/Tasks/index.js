@@ -6,7 +6,7 @@ import { NavLink, useSearchParams } from "react-router-dom";
 
 
 const Tasks = () => {
-    const [searchParams, setSearchParms] = useSearchParams();
+    const [searchParams] = useSearchParams();
     const query = searchParams.get("szukaj");
     const dispatch = useDispatch();
 

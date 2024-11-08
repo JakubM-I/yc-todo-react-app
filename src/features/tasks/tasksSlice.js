@@ -1,9 +1,10 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
+import { tasksFromLocalStorge } from "./utils/localStorage";
 
 export const tasksSlice = createSlice({
     name: "tasks",
     initialState: {
-        tasks: [],
+        tasks: tasksFromLocalStorge(),
     },
     reducers: {
         addNewTask: ({ tasks }, { payload: newTask }) => {
