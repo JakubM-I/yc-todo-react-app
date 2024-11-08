@@ -1,0 +1,14 @@
+[
+    {
+        "id": "1",
+        "taskDone": false,
+        "taskName": "Przykładowe zadanie 1",
+        "taskVisibility": true
+    },
+    {
+        "id": "2",
+        "taskDone": false,
+        "taskName": "Przykładowe zadanie 2",
+        "taskVisibility": true
+    }
+]

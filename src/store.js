@@ -5,11 +5,14 @@ import { tasksSaga } from "./features/tasks/tasksSaga";
 
 const sagaMiddleware = createSagaMiddleware();
 
-export const store = configureStore({
+const store = configureStore({
     reducer: {
         tasks: tasksReducer,
     },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware),
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware().concat(sagaMiddleware),
 })
 
 sagaMiddleware.run(tasksSaga);
+
+export default store;

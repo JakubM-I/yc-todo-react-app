@@ -1,32 +1,32 @@
 import { useDispatch, useSelector } from "react-redux";
-import { StyledTaskMenu, StyledMenuItem } from "./styled";
+import { StyledMenu, StyledMenuItem } from "../../../common/Menu/styled";
 import { selectTaskState, selectAllTaskDone, selectHiddenTask, hideDoneTasks, doneAllTasks } from "../tasksSlice";
 
 const TaskMenu = () => {
-    const {tasks} = useSelector(selectTaskState);
+    const { tasks } = useSelector(selectTaskState);
     const isAllTaskDone = useSelector(selectAllTaskDone);
     const isHiddenTasks = useSelector(selectHiddenTask);
     const dispatch = useDispatch();
 
-    return(
+    return (
         tasks.length > 0 && (
-            <StyledTaskMenu>
-            <StyledMenuItem 
-                onClick={() => dispatch(hideDoneTasks())}
-            >
-                {isHiddenTasks
-                ? "Pokaż " 
-                : "Ukryj "}
+            <StyledMenu>
+                <StyledMenuItem
+                    onClick={() => dispatch(hideDoneTasks())}
+                >
+                    {isHiddenTasks
+                        ? "Pokaż "
+                        : "Ukryj "}
 
-                zakończone
-            </StyledMenuItem>
-            <StyledMenuItem 
-                onClick={() => dispatch(doneAllTasks())}
-                disabled={isAllTaskDone}
-            >
-                Zakończ wszystkie
-            </StyledMenuItem>
-        </StyledTaskMenu>
+                    zakończone
+                </StyledMenuItem>
+                <StyledMenuItem
+                    onClick={() => dispatch(doneAllTasks())}
+                    disabled={isAllTaskDone}
+                >
+                    Zakończ wszystkie
+                </StyledMenuItem>
+            </StyledMenu>
         )
     )
 };

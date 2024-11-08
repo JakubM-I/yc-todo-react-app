@@ -5,6 +5,7 @@ import Tasks from './Tasks';
 import TaskMenu from './TasksMenu';
 import Section from '../../common/Section';
 import SearchForm from './SearchForm';
+import ExamplehMenu from './SearchMenu';
 
 function TasksList() {
 
@@ -14,6 +15,7 @@ function TasksList() {
         <Header title="Lista zadań" />
         <Section
           title="Dodaj nowe zadanie"
+          menu={<ExamplehMenu />}
           body={
             <Form />}
         />

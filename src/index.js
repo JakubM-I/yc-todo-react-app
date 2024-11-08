@@ -7,7 +7,7 @@ import AuthorPage from "./features/author";
 import TaskPage from './features/tasks/TaskPage';
 import { ThemeProvider } from 'styled-components';
 import { Provider } from 'react-redux';
-import { store } from './store';
+import store from './store';
 import { theme } from './features/tasks/utils/theme';
 import reportWebVitals from './reportWebVitals';
 import StyledGlobal from './styledGlobal';
