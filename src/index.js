@@ -43,7 +43,6 @@ root.render(
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <StyledGlobal />
-        {/* <App /> */}
         <RouterProvider router={router} />
       </ThemeProvider>
     </Provider>

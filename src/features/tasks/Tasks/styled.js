@@ -23,11 +23,6 @@ export const StyledTaskItem = styled.li`
     border-bottom: 1px solid ${({ theme }) => theme.colors.borderGray};
     transition: all 450ms ease-in;
 
-    /* ${({ done }) => done && css`
-        text-decoration: line-through;
-        color: ${({ theme }) => theme.colors.disabledGray};
-    `} */
-
     ${({ hide }) => !hide && css`
         display: none;
     `}

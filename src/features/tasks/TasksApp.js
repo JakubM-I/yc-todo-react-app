@@ -5,7 +5,7 @@ import Tasks from './Tasks';
 import TaskMenu from './TasksMenu';
 import Section from '../../common/Section';
 import SearchForm from './SearchForm';
-import ExamplehMenu from './SearchMenu';
+import ExamplehMenu from './ExampleTaskMenu';
 
 function TasksList() {
 
