@@ -1,8 +1,9 @@
 
 import { useDispatch, useSelector } from "react-redux";
-import { selectTaskState, toggleTaskDone, deleteTask, selectTaskByQuery } from "../tasksSlice";
+import { toggleTaskDone, deleteTask, selectTaskByQuery } from "../tasksSlice";
 import { StyledTaskList, StyledTaskItem, StyledDoneButton, StyledRemoveButton, StyledContent, StyledNavlink } from "./styled";
-import { NavLink, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
+import PageTitle from "../../../common/PageTitle";
 
 
 const Tasks = () => {
@@ -13,34 +14,37 @@ const Tasks = () => {
     const tasks = useSelector(state => selectTaskByQuery(state, query));
 
     return (
-        <StyledTaskList>
-            {tasks.map(task => (
-                <StyledTaskItem
-                    key={task.id}
-                    done={task.taskDone}
-                    hide={task.taskVisibility}
-                >
-                    <StyledDoneButton
+        <>
+            <PageTitle title={"Lista zadań"} />
+            <StyledTaskList>
+                {tasks.map(task => (
+                    <StyledTaskItem
+                        key={task.id}
                         done={task.taskDone}
-                        onClick={() => dispatch(toggleTaskDone(task.id))}
-                    />
-                    <StyledContent>
-                        <StyledNavlink
+                        hide={task.taskVisibility}
+                    >
+                        <StyledDoneButton
                             done={task.taskDone}
-                            to={`task/${task.id}`}
-                        >
-                            {task.taskName}
-                        </StyledNavlink>
-                    </StyledContent>
-                    <div>
-                        <StyledRemoveButton
-                            removeButton
-                            onClick={() => dispatch(deleteTask(task.id))}
+                            onClick={() => dispatch(toggleTaskDone(task.id))}
                         />
-                    </div>
-                </StyledTaskItem>
-            ))}
-        </StyledTaskList>
+                        <StyledContent>
+                            <StyledNavlink
+                                done={task.taskDone}
+                                to={`task/${task.id}`}
+                            >
+                                {task.taskName}
+                            </StyledNavlink>
+                        </StyledContent>
+                        <div>
+                            <StyledRemoveButton
+                                removeButton
+                                onClick={() => dispatch(deleteTask(task.id))}
+                            />
+                        </div>
+                    </StyledTaskItem>
+                ))}
+            </StyledTaskList>
+        </>
     )
 };
 
