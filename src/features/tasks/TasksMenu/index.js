@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { StyledMenu, StyledMenuItem } from "../../../common/Menu/styled";
 import { selectTaskState, selectAllTaskDone, selectHiddenTask, hideDoneTasks, doneAllTasks } from "../tasksSlice";
+import { StyledHiddenTaskBtn } from "./styled";
 
 const TaskMenu = () => {
     const { tasks } = useSelector(selectTaskState);
@@ -11,7 +12,8 @@ const TaskMenu = () => {
     return (
         tasks.length > 0 && (
             <StyledMenu>
-                <StyledMenuItem
+                <StyledHiddenTaskBtn
+                    isHiddenTasks={isHiddenTasks}
                     onClick={() => dispatch(hideDoneTasks())}
                 >
                     {isHiddenTasks
@@ -19,7 +21,7 @@ const TaskMenu = () => {
                         : "Ukryj "}
 
                     zakończone
-                </StyledMenuItem>
+                </StyledHiddenTaskBtn>
                 <StyledMenuItem
                     onClick={() => dispatch(doneAllTasks())}
                     disabled={isAllTaskDone}

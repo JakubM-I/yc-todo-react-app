@@ -11,7 +11,7 @@ const StyledGlobal = createGlobalStyle`
     }
   
     body{
-        background: ${({theme}) => theme.colors.primaryBackgroundColor};
+        background: ${({ theme }) => theme.colors.primaryLightColor};
     }
 `;
 

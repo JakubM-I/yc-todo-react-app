@@ -9,7 +9,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 gap: 30px;
-background: ${({ theme }) => theme.colors.mainBackgroundColor};
+background: ${({ theme }) => theme.colors.primaryGreyColor};
 /* position: fixed;
 top: 0; */
 `
@@ -21,9 +21,16 @@ cursor: pointer;
 
 export const StyledNavLink = styled(NavLink)`
 text-decoration: none;
-color: ${({ theme }) => theme.colors.primaryBackgroundColor};
+color: ${({ theme }) => theme.colors.primaryTextColor};
+transition: color 450ms ease-in;
+
+    &:hover{
+        color: ${({ theme }) => theme.colors.primaryBlue};
+    }
 
     &.active{
-        font-weight: 700;
+    font-weight: 700;
+    color: ${({ theme }) => theme.colors.primaryBlue};
+    border-block-end: 1px solid ${({ theme }) => theme.colors.primaryBlue};
     };
 `

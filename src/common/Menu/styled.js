@@ -12,15 +12,15 @@ export const StyledMenu = styled.div`
 export const StyledMenuItem = styled.button`
     background: none;
     border: none;
-    color: ${({ theme }) => theme.colors.menuButton};
+    color: ${({ theme }) => theme.colors.primaryBlue};
     transition: color .4s ease-out;
     cursor: pointer;
 
     &:hover{
-        color: ${({ theme }) => theme.colors.menuButtonHover};
+        color: ${({ theme }) => theme.colors.primaryBlueHover};
     }
 
     &:disabled{
-        color: ${({ theme }) => theme.colors.menuButtonDisable};
+        color: ${({ theme }) => theme.colors.secondaryText};
     }
 `;

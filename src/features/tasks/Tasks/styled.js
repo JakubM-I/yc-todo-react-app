@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import doneicon from "../../../common/assets/done-icon.png"
 import trashicon from "../../../common/assets/trash-icon.png";
+import { NavLink } from 'react-router-dom';
 
 export const StyledTaskList = styled.ul`
     padding: 20px 15px 0px;
@@ -19,12 +20,13 @@ export const StyledTaskItem = styled.li`
     gap: 10px;
     background: ${({ theme }) => theme.colors.primaryLightColor};
     padding: 5px;
-    border-bottom: 1px solid ${({ theme }) => theme.colors.secondBorderColor};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.borderGray};
+    transition: all 450ms ease-in;
 
-    ${({ done }) => done && css`
+    /* ${({ done }) => done && css`
         text-decoration: line-through;
-        color: ${({ theme }) => theme.colors.doneText};
-    `}
+        color: ${({ theme }) => theme.colors.disabledGray};
+    `} */
 
     ${({ hide }) => !hide && css`
         display: none;
@@ -32,6 +34,21 @@ export const StyledTaskItem = styled.li`
 
     & >div{
         display: flex;
+    }
+`;
+
+export const StyledNavlink = styled(NavLink)`
+text-decoration: none;
+    color: ${({ theme }) => theme.colors.primaryTextColor};
+    transition: all 450ms ease-in;
+
+    ${({ done }) => done && css`
+        text-decoration: line-through;
+        color: ${({ theme }) => theme.colors.disabledGray};
+    `}
+
+    &:hover{
+        color: ${({ theme }) => theme.colors.primaryBlue};
     }
 `;
 

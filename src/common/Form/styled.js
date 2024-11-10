@@ -17,7 +17,12 @@ export const StyledForm = styled.form`
 export const StyledInput = styled.input`
     flex-grow: 1;
     padding: 5px;
+    border: 1px solid ${({ theme }) => theme.colors.borderGray};
     font-size: ${({ theme }) => theme.font.formFontSize};
+
+    &::placeholder{
+        color: ${({ theme }) => theme.colors.secondaryText};
+    }
 
     @media(max-width: ${({ theme }) => theme.breakepoints.mobile}px){
         flex-basis: 100%;
