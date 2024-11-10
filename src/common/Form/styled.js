@@ -22,6 +22,7 @@ export const StyledInput = styled.input`
 
     &::placeholder{
         color: ${({ theme }) => theme.colors.secondaryText};
+        font-size: 0.9em;
     }
 
     @media(max-width: ${({ theme }) => theme.breakepoints.mobile}px){

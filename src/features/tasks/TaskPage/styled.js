@@ -6,11 +6,14 @@ export const StyledTaskPageBody = styled.div`
 `
 
 export const StyledBackNavLink = styled(NavLink)`
-    color: #000;
+    display: block;
+    margin-block-end: 1.5em;
+    color: ${({ theme }) => theme.colors.primaryBlue};
+    font-size: 0.9em;
     text-decoration: none;
     transition: opacity 350ms ease-in;
 
     &:hover{
-        opacity: 0.8;
+        color: ${({ theme }) => theme.colors.primaryBlueHover}
     }
 `
