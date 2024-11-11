@@ -31,6 +31,7 @@ Tasks list allows adding tasks to list. Tasks can be marked as done and removed 
 - React.js
 - Create React App
 - Redux
+- Redux-Saga
 - BEM
 
 ## Available Scripts
