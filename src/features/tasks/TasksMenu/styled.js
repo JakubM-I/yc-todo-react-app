@@ -9,7 +9,7 @@ export const StyledHiddenTaskBtn = styled(StyledMenuItem)`
         color: ${({ theme }) => theme.colors.primaryBlueHover}
     }
 
-    ${({ isHiddenTasks }) => isHiddenTasks && css`
+    ${({ $isHiddenTasks }) => $isHiddenTasks && css`
         color: ${({ theme }) => theme.colors.primaryBlue}
     `}
 

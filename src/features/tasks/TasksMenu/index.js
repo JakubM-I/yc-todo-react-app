@@ -13,7 +13,7 @@ const TaskMenu = () => {
         tasks.length > 0 && (
             <StyledMenu>
                 <StyledHiddenTaskBtn
-                    isHiddenTasks={isHiddenTasks}
+                    $isHiddenTasks={isHiddenTasks}
                     onClick={() => dispatch(hideDoneTasks())}
                 >
                     {isHiddenTasks

@@ -20,16 +20,15 @@ const Tasks = () => {
                 {tasks.map(task => (
                     <StyledTaskItem
                         key={task.id}
-                        done={task.taskDone}
-                        hide={task.taskVisibility}
+                        $hide={task.taskVisibility}
                     >
                         <StyledDoneButton
-                            done={task.taskDone}
+                            $done={task.taskDone}
                             onClick={() => dispatch(toggleTaskDone(task.id))}
                         />
                         <StyledContent>
                             <StyledNavlink
-                                done={task.taskDone}
+                                $done={task.taskDone}
                                 to={`task/${task.id}`}
                             >
                                 {task.taskName}
@@ -37,7 +36,6 @@ const Tasks = () => {
                         </StyledContent>
                         <div>
                             <StyledRemoveButton
-                                removeButton
                                 onClick={() => dispatch(deleteTask(task.id))}
                             />
                         </div>

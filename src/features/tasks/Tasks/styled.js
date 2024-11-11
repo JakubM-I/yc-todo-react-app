@@ -23,7 +23,7 @@ export const StyledTaskItem = styled.li`
     border-bottom: 1px solid ${({ theme }) => theme.colors.borderGray};
     transition: all 450ms ease-in;
 
-    ${({ hide }) => !hide && css`
+    ${({ $hide }) => !$hide && css`
         display: none;
     `}
 
@@ -33,11 +33,11 @@ export const StyledTaskItem = styled.li`
 `;
 
 export const StyledNavlink = styled(NavLink)`
-text-decoration: none;
+    text-decoration: none;
     color: ${({ theme }) => theme.colors.primaryTextColor};
     transition: all 450ms ease-in;
 
-    ${({ done }) => done && css`
+    ${({ $done }) => $done && css`
         text-decoration: line-through;
         color: ${({ theme }) => theme.colors.disabledGray};
     `}
@@ -63,7 +63,7 @@ export const StyledTaskButton = styled.button`
 export const StyledDoneButton = styled(StyledTaskButton)`
     background: ${({ theme }) => theme.colors.doneButton};
 
-    ${({ done }) => done && css`
+    ${({ $done }) => $done && css`
             background: ${({ theme }) => theme.colors.doneButtonDone};
             background-image: url("${doneicon}");
             background-position: center;
