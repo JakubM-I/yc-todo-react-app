@@ -34,7 +34,7 @@ const router = createBrowserRouter([
     ],
   }
 ], {
-  basename: "/yc-todo-react-app"
+  basename: process.env.PUBLIC_URL
 })
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
