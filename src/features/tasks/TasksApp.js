@@ -20,6 +20,7 @@ function TasksList() {
             <Form />}
         />
         <Section
+          title="Wyszukaj zadanie"
           body={
             <SearchForm />}
         />

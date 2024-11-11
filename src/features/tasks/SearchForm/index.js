@@ -14,7 +14,7 @@ const SearchForm = () => {
     return (
         <StyledForm>
             <StyledInput
-                placeholder="Filtruj zadania"
+                placeholder="Wpisz wyszukiwaną frazę"
                 value={query ? query : ""}
                 onChange={onInputChange}
             />
