@@ -7,7 +7,7 @@ const SearchForm = () => {
 
     const onInputChange = ({ target }) => {
         setSearchParams(target.value.trim() ?
-            { szukaj: target.value.trim() } :
+            { szukaj: target.value } :
             searchParams.delete("szukaj"))
     }
 
