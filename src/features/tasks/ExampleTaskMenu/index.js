@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { StyledMenuItem, StyledMenu } from "../../../common/Menu/styled";
+import { StyledMenu } from "../../../common/Menu/styled";
 import { fetchExampleTasks, loadingState } from "../tasksSlice";
 import { StyledExamplesMenuItem } from "./styled";
 

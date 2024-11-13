@@ -1,26 +1,16 @@
-import { Navigate, NavLink, useParams, useSearchParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import TasksAppMain from "../../../common/AppMainSection";
 import Header from "../../../common/Header";
 import Section from "../../../common/Section";
 import { useSelector } from "react-redux";
 import { selectTaskById } from "../tasksSlice";
 import { StyledBackNavLink, StyledTaskPageBody } from "./styled";
-import { useEffect } from "react";
 import PageTitle from "../../../common/PageTitle";
 
 const TaskPage = () => {
     const { id } = useParams();
 
-    const task = useSelector(state => selectTaskById(state, id))
-
-    // useEffect(() => {
-    //     let pageTitle;
-    //     // const curentTitle = document.title;
-
-    //     pageTitle = `Lista zadań - ${task.taskName}`;
-    //     document.title = pageTitle;
-    // }, [])
-
+    const task = useSelector(state => selectTaskById(state, id));
 
     return (
         <>
