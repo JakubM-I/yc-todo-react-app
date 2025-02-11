@@ -15,7 +15,7 @@ This is React version of my app, bootstrapped with [Create React App](https://gi
 
 ---
 
-Tasks list allows adding tasks to list. Tasks can be marked as done and removed from the list.
+The task list app allows users to add and remove tasks from the list. Each task can be marked as done. Tasks can also be searched by name. Every task has a unique ID and is stored in local storage. After clicking on a task, the user can see its details.
 
 ## Techniques
 
