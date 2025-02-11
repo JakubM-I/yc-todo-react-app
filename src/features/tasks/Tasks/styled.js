@@ -23,7 +23,7 @@ export const StyledTaskItem = styled.li`
     border-bottom: 1px solid ${({ theme }) => theme.colors.borderGray};
     transition: all 450ms ease-in;
 
-    ${({ $hide }) => !$hide && css`
+    ${({ $hide }) => $hide && css`
         display: none;
     `}
 
